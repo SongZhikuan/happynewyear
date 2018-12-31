@@ -6,24 +6,11 @@ window.onload = function(){
 	
 	var music = document.getElementById("music");
 	var audio = document.getElementsByTagName("audio")[0];
-   		setTimeout(function () {
-            audio.play();
-            music.setAttribute("class","play");
-        },1000);
 	//音乐播放完停止的时候，自动停止光盘转动
 	audio.addEventListener("ended", function(event){
 		music.setAttribute("class","");
 	},false);
-	
-	music.addEventListener("click", function(event){
-		if(audio.paused){
-			audio.play();
-			this.setAttribute("class","play");
-		}else{
-			audio.pause();
-			this.setAttribute("class","");
-		}
-	},false);
+
 	music.addEventListener("touchstart", function(event){
 		if(audio.paused){
 			audio.play();
@@ -40,6 +27,8 @@ window.onload = function(){
 		page2.style.display = "block";
 		page3.style.display = "block";
 		page3.style.top = "100%";
+        audio.play();
+        music.setAttribute("class","play");
 		setTimeout(function(){
 			page2.setAttribute("class","page fadeOut");
 			page3.setAttribute("class","page fadeIn")
