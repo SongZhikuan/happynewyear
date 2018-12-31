@@ -11,8 +11,9 @@ window.onload = function(){
 	audio.addEventListener("ended", function(event){
 		music.setAttribute("class","");
 	},false);
+	var count = 1;
 	music.addEventListener("touchstart", function(event){
-		alert('')
+		document.getElementById('count').innerHTML = ++count+'';
 		if(audio.paused){
 			audio.play();
 			this.setAttribute("class","play");
