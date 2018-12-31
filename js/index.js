@@ -12,6 +12,7 @@ window.onload = function(){
 		music.setAttribute("class","");
 	},false);
 	music.addEventListener("touchstart", function(event){
+		alert('')
 		if(audio.paused){
 			audio.play();
 			this.setAttribute("class","play");
