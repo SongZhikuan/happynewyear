@@ -33,7 +33,7 @@
 			<div class="p3_first"></div>
 			<div class="p3_blessing"></div>
 		</div>
-		<audio id="audio" autoplay src="http://47.104.203.64:9010/小虎队、忧欢派对%20-%20新年快乐.mp3" type="audio/mpeg">
+		<audio id="audio"  src="http://47.104.203.64:9010/小虎队、忧欢派对%20-%20新年快乐.mp3" type="audio/mpeg">
 			...
 		</audio>
 	</body>
@@ -43,21 +43,22 @@
        var ad = document.getElementById('audio');
        if(ad){
            console.log(ad);
-           setTimeout(function () {
-               if(ad.paused){
-                   ad.play();
-               }else{
-                   ad.pause();
-			   }
-           },2000)
-           setTimeout(function () {
-               if(ad.paused){
-                   console.log(ad)
-                   ad.play();
-               }else{
-                   ad.pause();
-			   }
-           },2500)
+           // setTimeout(function () {
+           //     console.log(ad);
+           //     if(ad.paused){
+           //         ad.play();
+           //     }else{
+           //         ad.pause();
+			//    }
+           // },2000)
+           // setTimeout(function () {
+           //     console.log(ad)
+           //     if(ad.paused){
+           //         ad.play();
+           //     }else{
+           //         ad.pause();
+			//    }
+           // },2500)
 		}
 //        document.addEventListener('touchstart', function () {
 //            if(ad.paused){

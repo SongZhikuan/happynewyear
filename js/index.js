@@ -21,7 +21,7 @@ window.onload = function(){
 		}
 	},false);
 	
-	//点击屏幕，开启幸运2018
+	//点击屏幕，开启幸运2019
 	p1_lantern.addEventListener("touchstart", function(event){
 		page1.style.display = "none";
 		page2.style.display = "block";
@@ -34,6 +34,7 @@ window.onload = function(){
 			page3.setAttribute("class","page fadeIn")
 		},5500);
 	},false);
-	
+    console.log(audio);
+    audio.play();
 }
 
