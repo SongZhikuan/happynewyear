@@ -37,6 +37,6 @@ window.onload = function(){
 		},5500);
 	},false);
     console.log(audio);
-    audio.play();
+    // audio.play();
 }
 
