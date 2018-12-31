@@ -6,7 +6,9 @@ window.onload = function(){
 	
 	var music = document.getElementById("music");
 	var audio = document.getElementsByTagName("audio")[0];
-	
+   		setTimeout(function () {
+            audio.play();
+        },1000);
 	//音乐播放完停止的时候，自动停止光盘转动
 	audio.addEventListener("ended", function(event){
 		music.setAttribute("class","");
