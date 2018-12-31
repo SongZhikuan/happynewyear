@@ -11,9 +11,7 @@ window.onload = function () {
     audio.addEventListener("ended", function (event) {
         music.setAttribute("class", "");
     }, false);
-    var count = 1;
     music.addEventListener("touchstart", function (event) {
-        document.getElementById('count').innerHTML = ++count + '';
         if (audio.paused) {
             audio.play();
             this.setAttribute("class", "play");
@@ -29,7 +27,6 @@ window.onload = function () {
         page2.style.display = "block";
         page3.style.display = "block";
         page3.style.top = "100%";
-        audio.play();
         music.setAttribute("class", "play");
         setTimeout(function () {
             page2.setAttribute("class", "page fadeOut");

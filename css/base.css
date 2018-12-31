@@ -1,0 +1,130 @@
+.pointer{ cursor: pointer;}
+
+.left-align{ text-align:left }
+
+.center{ text-align:center }
+
+.right-align{ text-align:right }
+
+.justify{ text-align:justify }
+
+.nowrap{ white-space:nowrap }
+
+.break-word{ word-wrap:break-word }
+
+.inline{ display:inline }
+
+.block{ display:block }
+
+.inline-block{ display:inline-block }
+
+.table{ display:table }
+
+.table-cell{ display:table-cell }
+
+.overflow-hidden{ overflow:hidden }
+
+.overflow-scroll{ overflow:scroll }
+
+.overflow-auto{ overflow:auto }
+
+.left{ float:left }
+
+.right{ float:right }
+
+.border-box{ box-sizing:border-box }
+
+.align-baseline{ vertical-align:baseline }
+
+.align-top{ vertical-align:top }
+
+.align-middle{ vertical-align:middle }
+
+.align-bottom{ vertical-align:bottom }
+
+.flex{ display:flex }
+
+.flex-column{ flex-direction:column }
+
+.flex-wrap{ flex-wrap:wrap }
+
+.flex-shrink-0{ flex-shrink: 0}
+
+.flex-shrink-1{ flex-shrink: 1}
+
+.flex-grow-1{ flex-grow: 1}
+
+.flex-grow-0{ flex-grow: 0}
+
+.items-start{ align-items:flex-start }
+
+.items-end{ align-items:flex-end }
+
+.items-center{ align-items:center }
+
+.items-baseline{ align-items:baseline }
+
+.items-stretch{ align-items:stretch }
+
+.self-start{ align-self:flex-start }
+
+.self-end{ align-self:flex-end }
+
+.self-center{ align-self:center }
+
+.self-baseline{ align-self:baseline }
+
+.self-stretch{ align-self:stretch }
+
+.justify-start{ justify-content:flex-start }
+
+.justify-end{ justify-content:flex-end }
+
+.justify-center{ justify-content:center }
+
+.justify-between{ justify-content:space-between }
+
+.justify-around{ justify-content:space-around }
+
+.justify-evenly{ justify-content:space-evenly }
+
+.content-start{ align-content:flex-start }
+
+.content-end{ align-content:flex-end }
+
+.content-center{ align-content:center }
+
+.content-between{ align-content:space-between }
+
+.content-around{ align-content:space-around }
+
+.content-stretch{ align-content:stretch }
+
+.flex-auto{
+  flex:1 1 auto;
+  min-width:0;
+  min-height:0;
+}
+
+.flex-none{ flex:none }
+
+.order-0{ order:0 }
+
+.order-1{ order:1 }
+
+.order-2{ order:2 }
+
+.order-3{ order:3 }
+
+.order-last{ order:99999 }
+
+.relative{ position:relative }
+
+.absolute{ position:absolute }
+
+.fixed{ position:fixed }
+
+.display-none{ display:none !important }
+
+.ellipsis {overflow: hidden;text-overflow:ellipsis;white-space:nowrap;}
+

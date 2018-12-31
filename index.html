@@ -1,106 +1,127 @@
 <!DOCTYPE html>
 <html lang="Zh-cn">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta name="format-detection" content="telephone=yes"/>
-		<title>元旦快乐</title>
-		<link rel="stylesheet" href="css/style.css" />
-	</head>
-	<body style="text-align: center">
-		<div style="max-width: 400px; height: 100%;position: relative;">
-			<div class="music" >
-				<img src="img/music_pointer.png"/>
-				<img class="play" id="music" src="img/music_disc.png"/>
-			</div>
-			<div class="page" id="page1">
-				<div class="bg"></div>
-				<div class="p1_lantern">点击屏幕<br />开启好运2019</div>
-				<div class="p1_icon"></div>
-				<div class="p1_words">2019年，新年快乐</div>
-			</div>
-			<div class="page" id="page2">
-				<div class="bg p2_bg_loading"></div>
-				<div class="bg"></div>
-				<div class="p2_circle"></div>
-				<div class="p2_2018"></div>
-			</div>
-			<div class="page" id="page3">
-				<div class="bg"></div>
-				<div class="p3_logo"></div>
-				<div class="p3_title"></div>
-				<div class="p3_second"></div>
-				<div class="p3_first"></div>
-				<div class="p3_blessing"></div>
-				<div id="count" style="background: yellowgreen;width: 100px;height:20px;text-align: left;z-index: 9000"></div>
-			</div>
-			<audio id="audio" class="foo" preload="auto" controls src="http://47.104.203.64:9010/hp.mp3" type="audio/mpeg">
-				...
-			</audio>
-		</div>
-	</body>
-	<script src="js/index.js"></script>
-	<script>
-        var audioElements = document.getElementsByTagName('audio'),
-            sounds = {};
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=yes"/>
+    <title>元旦快乐</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+</head>
+<body style="text-align: center">
+<div style="max-width: 400px; height: 100%;position: relative;z-index: 100">
+    <div class="music">
+        <img src="img/music_pointer.png"/>
+        <img class="play" id="music" src="img/music_disc.png"/>
+    </div>
+    <div class="page" id="page1">
+        <div class="bg"></div>
+        <div class="p1_lantern">点击屏幕<br/>开启好运2019</div>
+        <div class="p1_icon"></div>
+        <div class="p1_words">2019年，新年快乐</div>
+    </div>
+    <div class="page" id="page2">
+        <div class="bg p2_bg_loading"></div>
+        <div class="bg"></div>
+        <div class="p2_circle"></div>
+        <div class="p2_2018"></div>
+    </div>
+    <div class="page" id="page3">
+        <div class="bg"></div>
+        <div class="p3_logo"></div>
+        <div class="p3_title"></div>
+        <div class="p3_second"></div>
+        <div class="p3_first"></div>
+        <div class="p3_blessing"></div>
+    </div>
+    <audio id="audio" class="foo" preload="auto" src="http://47.104.203.64:9010/hp.mp3" type="audio/mpeg">
+        ...
+    </audio>
+</div>
+<div id="mengb" style="position: absolute;top:0;left:0;right:0;bottom: 0;z-index: 101;background: rgba(0,0,0,.2);padding-left: 10vw;padding-right: 10vw;padding-top: 40vh;">
+    <img id="img" class="animated bounceInDown " src="./img/gh777ad.png" alt="" style="border-radius: 5px;width:80vw">
 
+    <div >
+        <span class="inline-block "
+              style="width:60px;height:60px;line-height: 60px;text-align: center ;border-radius: 50%;border: 1px solid white;color: white;font-size: 35px;"
+        >×
+        </span>
+    </div>
+</div>
+</body>
+<script src="js/index.js"></script>
+<script>
+    var audioElements = document.getElementsByTagName('audio'),
+        sounds = {};
+
+    for (var i = 0; i < audioElements.length; i++) {
+        sounds[audioElements[i].className] = audioElements[i];
+    }
+
+    // Solves chrome for andriod issue 178297 Require user gesture
+    // https://code.google.com/p/chromium/issues/detail?id=178297
+    // Fix based on code from http://blog.foolip.org/2014/02/10/media-playback-restrictions-in-blink/
+    if (mediaPlaybackRequiresUserGesture()) {
+        window.addEventListener('keydown', removeBehaviorsRestrictions);
+        window.addEventListener('mousedown', removeBehaviorsRestrictions);
+        window.addEventListener('touchstart', removeBehaviorsRestrictions);
+    }
+
+    function mediaPlaybackRequiresUserGesture() {
+        // test if play() is ignored when not called from an input event handler
+        var video = document.createElement('video');
+        video.play();
+        return video.paused;
+    }
+
+    function removeBehaviorsRestrictions() {
         for (var i = 0; i < audioElements.length; i++) {
-            sounds[audioElements[i].className] = audioElements[i];
+            audioElements[i].load();
         }
 
-        // Solves chrome for andriod issue 178297 Require user gesture
-        // https://code.google.com/p/chromium/issues/detail?id=178297
-        // Fix based on code from http://blog.foolip.org/2014/02/10/media-playback-restrictions-in-blink/
-        if (mediaPlaybackRequiresUserGesture()) {
-            window.addEventListener('keydown', removeBehaviorsRestrictions);
-            window.addEventListener('mousedown', removeBehaviorsRestrictions);
-            window.addEventListener('touchstart', removeBehaviorsRestrictions);
+        window.removeEventListener('keydown', removeBehaviorsRestrictions);
+        window.removeEventListener('mousedown', removeBehaviorsRestrictions);
+        window.removeEventListener('touchstart', removeBehaviorsRestrictions);
+    }
+
+    function playSound(sound) {
+        for (var key in sounds) {
+            sounds[key].pause();
         }
 
-        function mediaPlaybackRequiresUserGesture() {
-            // test if play() is ignored when not called from an input event handler
-            var video = document.createElement('video');
-            video.play();
-            return video.paused;
+        sounds[sound].load();
+        sounds[sound].play();
+    }
+
+    playSound('foo');
+    var isFirstTime = true;
+    document.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+        if (isFirstTime) {
+            isFirstTime = false;
+            document.getElementById('audio').play();
+            document.getElementById('audio').play();
         }
-
-        function removeBehaviorsRestrictions() {
-            for (var i = 0; i < audioElements.length; i++) {
-                audioElements[i].load();
-            }
-
-            window.removeEventListener('keydown', removeBehaviorsRestrictions);
-            window.removeEventListener('mousedown', removeBehaviorsRestrictions);
-            window.removeEventListener('touchstart', removeBehaviorsRestrictions);
+    }, false);
+    var isFirstTime2 = true;
+    document.addEventListener('touchend', function (e) {
+        e.preventDefault();
+        if (isFirstTime2) {
+            isFirstTime2 = false;
+            document.getElementById('audio').play();
+            document.getElementById('audio').play();
         }
+    }, false);
+    document.getElementById('mengb').addEventListener('touchstart', function (e) {
+        document.getElementById('img').classList.remove("bounceInDown");
+        document.getElementById('img').classList.add("bounceOutDown");
+        document.getElementById('mengb').style.display = 'none';
+        document.getElementById('audio').play();
+        console.log('..............')
+    });
 
-        function playSound(sound) {
-            for (var key in sounds) {
-                sounds[key].pause();
-            }
-
-            sounds[sound].load();
-            sounds[sound].play();
-        }
-        playSound('foo');
-        var isFirstTime = true;
-        document.addEventListener('touchstart', function(e){
-            e.preventDefault();
-            if(isFirstTime){
-                isFirstTime = false;
-                document.getElementById('audio').play();
-                document.getElementById('audio').play();
-            }
-        }, false);
-        var isFirstTime2 = true;
-        document.addEventListener('touchend', function(e){
-            e.preventDefault();
-            if(isFirstTime2){
-                isFirstTime2 = false;
-                document.getElementById('audio').play();
-                document.getElementById('audio').play();
-            }
-        }, false);
-	</script>
+</script>
 </html>
