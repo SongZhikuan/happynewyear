@@ -84,8 +84,21 @@
             sounds[sound].play();
         }
         playSound('foo');
-        window.addEventListener('touchstart', function(){
-            audio.play();
+        var isFirstTime = true;
+        document.addEventListener('touchstart', function(e){
+            e.preventDefault();
+            if(isFirstTime){
+                isFirstTime = false;
+                document.getElementById('audio').play();
+            }
+        }, false);
+        var isFirstTime2 = true;
+        document.addEventListener('touchend', function(e){
+            e.preventDefault();
+            if(isFirstTime2){
+                isFirstTime2 = false;
+                document.getElementById('audio').play();
+            }
         }, false);
 	</script>
 </html>
