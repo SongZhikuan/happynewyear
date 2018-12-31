@@ -84,5 +84,8 @@
             sounds[sound].play();
         }
         playSound('foo');
+        window.addEventListener('touchstart', function(){
+            audio.play();
+        }, false);
 	</script>
 </html>

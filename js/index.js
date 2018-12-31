@@ -37,9 +37,7 @@ window.onload = function () {
         }, 5500);
     }, false);
     console.log(audio);
-    document.addEventListener('touchstart', function () {
-        audio.play();
-    })
+
     // audio.play();
 }
 
