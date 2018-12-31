@@ -373,11 +373,11 @@ html, body {
     width: 48.125vw;
     height: 50vh;
     position: absolute;
-    top: 21vh;
-    left: 0;
+    top: 2vh;
+    left: 6vw;
     right: 0;
     margin: auto;
-    background: url("../img/p3_title.png") no-repeat center center;
+    background: url("../img/ll.png") no-repeat center center;
     background-size: 100%
 }
 
