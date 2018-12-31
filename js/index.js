@@ -6,11 +6,11 @@ window.onload = function(){
 	
 	var music = document.getElementById("music");
 	var audio = document.getElementsByTagName("audio")[0];
+
 	//音乐播放完停止的时候，自动停止光盘转动
 	audio.addEventListener("ended", function(event){
 		music.setAttribute("class","");
 	},false);
-
 	music.addEventListener("touchstart", function(event){
 		if(audio.paused){
 			audio.play();
