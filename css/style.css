@@ -353,6 +353,7 @@ html, body {
 }
 
 #page3 .bg {
+    /*background: url("../img/p4_bg.png") no-repeat center center*/
     background: url("../img/p3_bg.jpg") no-repeat center center
 }
 
